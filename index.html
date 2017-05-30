@@ -1,2 +1,25 @@
+<link rel="shortcut icon" type="image/ico" href="res/favicon.ico">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<style>
+body {
+  background-color: AliceBlue;
+}
 
-Coming soon... 
+p {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<p id="fact">Loading cat fact.</p>
+</body> 
+
+<script>
+$.getJSON("https://cors-anywhere.herokuapp.com/https://catfact.ninja/facts", function(json) {
+  var catFact = json.data[0]["fact"];
+  document.getElementById("fact").innerHTML = catFact;
+})
+</script>
